@@ -51,7 +51,7 @@ export default class App extends React.Component {
             { this.state.isLoading ? '' :
             (
               <>
-                <ShareButton platform="twitter" url={encodeURIComponent(`https://twitter.com/share?text=${this.state.advice}&url=https://api.adviceslip.com/`)} title="Tweet this advice" icon={<FaTwitter />} />
+                <ShareButton platform="twitter" url={`https://twitter.com/share?text=${this.state.advice}&url=https://api.adviceslip.com/`} title="Tweet this advice" icon={<FaTwitter />} />
               </>
             )}
           </div>
