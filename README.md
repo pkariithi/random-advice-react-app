@@ -6,6 +6,9 @@ A React based simple web app that fetches a random advice from Advice Slip and s
 
 ## Features
 
+### v0.0.2
+- Feature: Dark mode
+
 ### v0.0.1
 - Minimal design
 - Display random advice
@@ -15,4 +18,8 @@ A React based simple web app that fetches a random advice from Advice Slip and s
 ## Screenshot
 
 ### v 0.0.1
-![screenshot showing the random advice app](https://github.com/pkariithi/random-advice-react-app/blob/master/public/random-advice-react-app-screenshot-0.0.1.png?raw=true)
+![screenshot showing the random advice app, release version 0.0.2](https://github.com/pkariithi/random-advice-react-app/blob/master/public/random-advice-react-app-screenshot-0.0.2.png?raw=true)
+
+### v 0.0.1
+![screenshot showing the random advice app, release version 0.0.1](https://github.com/pkariithi/random-advice-react-app/blob/master/public/random-advice-react-app-screenshot-0.0.1.png?raw=true)
+

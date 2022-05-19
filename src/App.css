@@ -1,3 +1,30 @@
+:root {
+  --app-background: #eee;
+  --button-background: #1070cf;
+  --button-hover-background: #0e64ba;
+  --header-heading-color: #0e64ba;
+  --header-paragraph-color: #888;
+  --header-paragraph-link-color: #888;
+  --header-paragraph-link-hover-color: #0e64ba;
+  --card-background-color: #fff;
+  --card-advice-color: #333;
+  --social-button-color: #888;
+  --social-button-hover-color: #0e64ba;
+}
+[data-theme='dark'] {
+  --app-background: #001;
+  --button-background: #121223;
+  --button-hover-background: #1A1A2B;
+  --header-heading-color: #ddd;
+  --header-paragraph-color: #555;
+  --header-paragraph-link-color: #555;
+  --header-paragraph-link-hover-color: #888;
+  --card-background-color: #00001D;
+  --card-advice-color: #ddd;
+  --social-button-color: #555;
+  --social-button-hover-color: #888;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +33,8 @@
 html, body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  background-color: #eee;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   justify-content: center;
 }
@@ -17,16 +43,17 @@ h1, h2 {
 }
 button {
   font: inherit;
-  background-color: #1070cf;
+  background-color: var(--button-background);
   color: #fff;
   border: none;
   padding: 0.25em 0.75em;
   border-radius: 0.24em;
   font-size: 1.2em;
   text-transform: uppercase;
+  cursor: pointer;
 }
 button:hover {
-  background-color: #0e64ba;
+  background-color: var(--button-hover-background);
 }
 button.has-icon {
   display: flex;
@@ -37,12 +64,59 @@ button.has-icon svg {
   font-size: 0.8em;
 }
 
-#root {
+.mode-switcher {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  height: 2em;
+  top: 0.5em;
+  left: 0.5em;
+}
+.mode-switcher p {
+  margin-left: 4.5em;
+  color: #888;
+}
+.switcher {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 2em;
+  background-color: #ccc;
+  width: 4em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+.switcher::before {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.4s;
+  bottom: 0.2em;
+  height: 1.6em;
+  width: 1.6em;
+  left: 0.2em;
+}
+[data-theme="dark"] .switcher {
+  background-color: #66bb6a;
+}
+[data-theme="dark"] .switcher::before {
+  transform: translateX(2em);
+}
+
+#root,
+.app {
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 100%;
 }
 .app {
+  background-color: var(--app-background);
+}
+.content{
   width: 50%;
   margin: 5em 0;
 }
@@ -59,25 +133,25 @@ button.has-icon svg {
   margin-bottom: 1em;
 }
 .header h1 {
-  color: #0e64ba;
+  color: var(--header-heading-color);
   font-size: 2.5em;
 }
 .header p {
-  color: #888;
+  color: var(--header-paragraph-color);
   margin: 0.3em 0 0.5em;
 }
 .header p a {
-  color: #888;
+  color: var(--header-paragraph-link-color);
   text-decoration: none;
-  border-bottom: 1px solid #888;
+  border-bottom: 1px solid var(--header-paragraph-link-color);
 }
 .header p a:hover {
-  color: #0e64ba;
-  border-bottom: 1px solid #0e64ba;
+  color: var(--header-paragraph-link-hover-color);
+  border-bottom: 1px solid var(--header-paragraph-link-hover-color);
 }
 
 .card {
-  background-color: #fff;
+  background-color: var(--card-background-color);
   padding: 1em;
   border-radius: 0.25em;
   width: 100%;
@@ -87,7 +161,7 @@ button.has-icon svg {
 .card h2 {
   font-size: 2em;
   line-height: 1.2;
-  color: #333;
+  color: var(--card-advice-color);
 }
 .card h2 span {
   display: block;
@@ -111,10 +185,11 @@ button.has-icon svg {
   margin-right: 0.5em;
 }
 .social-buttons a {
-  color: #888;
+  display: flex;
+  color: var(--social-button-color);
   text-decoration: none;
   font-size: 2em;
 }
 .social-buttons a:hover {
-  color: #0e64ba;
+  color: var(--social-button-hover-color);
 }
