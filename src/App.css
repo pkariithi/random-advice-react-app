@@ -121,7 +121,7 @@ button.has-icon svg {
   margin: 5em 0;
 }
 @media(max-width: 800px) {
-  .app {
+  .content {
     width: 80%;
   }
 }
